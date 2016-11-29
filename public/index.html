@@ -1,0 +1,103 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script>
+
+</script>
+  <title>Resume App</title>
+</head>
+<body>
+  <div class="container" ng-controller="AppCtrl">
+    <h1>Resume App</h1>
+    <h3>Education</h3>
+    <table class="table1">
+      <thead>
+        <tr>
+          <th>School Name</th>
+          <th>Degree</th>
+          <th>Year</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&nbsp;&nbsp;<input class="form-control" ng-model="education.name">&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;<input class="form-control" ng-model="education.degree">&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;<input class="form-control" ng-model="education.year">&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;<button class="btn btn-primary" ng-click="addEducation()">Add Education</button>&nbsp;&nbsp;</td>
+          <td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+        </tr>
+        <tr ng-repeat="education in educationlist">
+          <td>&nbsp;&nbsp;{{education.name}}</td>
+          <td>&nbsp;&nbsp;{{education.degree}}</td>
+          <td>&nbsp;&nbsp;{{education.year}}</td>
+          <td>&nbsp;&nbsp;<button class="btn btn-danger" ng-click="remove(education._id)">Remove</button></td>
+          <td>&nbsp;&nbsp;<button class="btn btn-warning" ng-click="edit(education._id)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Skill</h3>
+    <table class="table2">
+      <thead>
+        <tr>
+          <th>Skill Name</th>
+          <th>Description</th>
+          <th>Action</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&nbsp;&nbsp;<input class="form-control" ng-model="skill.name">&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;<input class="form-control" ng-model="skill.description">&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;<button class="btn btn-primary" ng-click="addSkill()">Add Skill</button>&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;<button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+        </tr>
+        <tr ng-repeat="skill in skilllist">
+          <td>{{skill.name}}</td>
+          <td>{{skill.description}}</td>
+          <td>&nbsp;&nbsp;<button class="btn btn-danger" ng-click="remove(skill._id)">Remove</button></td>
+          <td>&nbsp;&nbsp;<button class="btn btn-warning" ng-click="edit(skill._id)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Project</h3>
+    <table class="table3">
+      <thead>
+        <tr>
+          <th>Project Name</th>
+          <th>Description</th>
+          <th>Action</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&nbsp;&nbsp;<input class="form-control" ng-model="project.name">&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;<input class="form-control" ng-model="project.description">&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;<button class="btn btn-primary" ng-click="addProject()">Add Project</button>&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;<button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+        </tr>
+        <tr ng-repeat="project in projectlist">
+          <td>{{project.name}}</td>
+          <td>{{project.description}}</td>
+          <td>&nbsp;&nbsp;<button class="btn btn-danger" ng-click="remove(project._id)">Remove</button></td>
+          <td>&nbsp;&nbsp;<button class="btn btn-warning" ng-click="edit(project._id)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+<script src="controllers/controller1.js"></script>
+
+</body>
+</html>
